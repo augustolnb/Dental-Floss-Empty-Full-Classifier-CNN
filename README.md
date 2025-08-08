@@ -30,9 +30,10 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
 ├── card28.ipynb               # Código com o modelo 
-├── requirements.txt
-└── README.md
-└── dataset_dental_floss.zip   # Dataset 
+├── dataset_dental_floss.zip   # Dataset
+├── README.md
+└── requirements.txt
+ 
 ```
  
 ## 📊 O Dataset
