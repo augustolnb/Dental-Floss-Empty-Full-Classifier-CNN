@@ -32,6 +32,7 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 ├── card28.ipynb               # Código com o modelo 
 ├── CNN-Classifier-Model.h5    # Modelo salvo
 ├── dataset_dental_floss.zip   # Dataset
+├── predict_offline.py         # Código para execução do modelo salvo
 ├── README.md
 └── requirements.txt
  
@@ -147,12 +148,13 @@ A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 ## 🚀 Como Usar
 
-### Pré-requisitos
+### Pré-requisitos para execução offline
 
 -   Python 3.8+
--   pip (Python Package Installer)
--   Git
-
+-   Tensorflow
+-   Numpy
+-   OpenCV
+    
 ### Instalação
 
 1.  **Clone o repositório:**
@@ -174,47 +176,18 @@ A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 ### Executando uma Previsão
 
-Para classificar uma nova imagem, você pode usar o modelo treinado com um script como este:
+Para realizar previsões, é possível usar o modelo treinado **CNN-Classifier-Model.h5** com o script **predict-offline.py**.
+Basta modificar no código o caminho das imagens que gostaria de classificar.
 
-```python
-import tensorflow as tf
-import numpy as np
-import cv2
-
-# Carregar o modelo treinado
-# model = tf.keras.models.load_model('caminho/para/seu/modelo.h5')
-
-# Função de predição adaptada do notebook
-def prever_nova_imagem(caminho_imagem, model):
-    img = cv2.imread(caminho_imagem, cv2.IMREAD_GRAYSCALE)
-    if img is None:
-        print(f"Erro: Não foi possível carregar a imagem em {caminho_imagem}")
-        return None, None
-
-    img_resized = cv2.resize(img, (128, 128), interpolation=cv2.INTER_AREA)
-    img_normalized = img_resized.astype("float32") / 255.0
-    img_tensor = np.expand_dims(img_normalized, axis=-1)
-    img_tensor = np.expand_dims(img_tensor, axis=0)
-
-    predictions = model.predict(img_tensor)
-    probabilities = tf.nn.softmax(predictions).numpy()[0]
-    predicted_class_index = np.argmax(predictions, axis=1)
-    
-    class_names = ['empty', 'full']
-    predicted_class = class_names[predicted_class_index[0]]
-    
-    return predicted_class, probabilities
-
-# Exemplo de uso
-# caminho_da_nova_imagem = 'caminho/para/sua/imagem.jpg'
-# classe_prevista, probabilidades = prever_nova_imagem(caminho_da_nova_imagem, model)
-
-# if classe_predita:
-#     print(f"A imagem é provavelmente: {classe_prevista}")
-#     print(f"Probabilidade de ser 'empty': {probabilidades[0]:.2f}")
-#     print(f"Probabilidade de ser 'full': {probabilidades[1]:.2f}")
+```sh
+$ python3.12 predict_offline.py
 
 ```
+Exemplo de saída:
+
+<p align='center'>
+  <img width="402" height="162" alt="image" src="https://github.com/user-attachments/assets/d3e48eaa-5a1f-4e19-88bd-a977fbd88083" />
+</p>
 
 
 ## ✒️ Autor
