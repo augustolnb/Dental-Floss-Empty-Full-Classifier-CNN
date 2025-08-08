@@ -1,4 +1,4 @@
-# Classificador de Embalagens de Fio Dental (Cheia ou Vazia)
+# Classificador de Embalagens de Fio Dental
 
 ## Descrição do Projeto
 
