@@ -219,8 +219,8 @@ def prever_nova_imagem(caminho_imagem, model):
 
 ## ✒️ Autor
 
-**Lucas Augusto Nunes de Barros** - `[Seu Sobrenome]`
+**Lucas Augusto Nunes de Barros**
 
--   **LinkedIn:** `[https://www.linkedin.com/company/login/]`
+-   **LinkedIn:** `[https://www.linkedin.com/in/augusto-lnb/]`
 -   **GitHub:** `[https://github.com/augustolnb]`
 
