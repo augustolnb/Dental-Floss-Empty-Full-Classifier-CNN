@@ -148,7 +148,7 @@ A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 ## 🚀 Como Usar
 
-### Pré-requisitos para execução offline
+### Pré-requisitos para execução local
 
 -   Python 3.8+
 -   Tensorflow
