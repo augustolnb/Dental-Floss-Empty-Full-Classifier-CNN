@@ -80,7 +80,7 @@ $ python3.12 02-selecionar_ROI.py --pasta_entrada /caminho/das/fotos/renomeadas 
 
 A etapa final de preparação. Este script processa as imagens cortadas para:
 -   **Redimensionar:** Todas as imagens foram padronizadas para as dimensões exigidas pela entrada do modelo (128x128 pixels).
--   **Conversão da Escala de Cores:** As imagens foram todas convertidas para escala de cinza com o objetivo de otimizar e acelerar o processo de treinamento da rede neural.
+-   **Converter a Escala de Cores:** As imagens foram todas convertidas para escala de cinza com o objetivo de otimizar e acelerar o processo de treinamento da rede neural.
 
 ```sh
 python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/recortadas --pasta_saida /caminho/do/dataset/final
