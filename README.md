@@ -95,7 +95,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 ## O Modelo da Rede Neural
 
-O projeto tem como base uma **Rede Neural Convolucional (CNN)**, com 3 camadas convolucionais.
+O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 3 camadas convolucionais.
 
 ### Arquitetura
 
