@@ -78,7 +78,7 @@ $ python3.12 02-selecionar_ROI.py --pasta_entrada /caminho/das/fotos/renomeadas 
   &nbsp;&nbsp;&nbsp;&nbsp;    
   <img width="260" height="341" alt="image" src="https://github.com/user-attachments/assets/45c84c62-e48b-4dcd-84a4-3839c05ce139" />
   &nbsp;&nbsp;&nbsp;&nbsp;    
-  <img width="293" height="293" alt="image" src="https://github.com/user-attachments/assets/7c24756d-f644-400c-80a7-bfd16c96afa5" />
+  <img width="193" height="193" alt="image" src="https://github.com/user-attachments/assets/7c24756d-f644-400c-80a7-bfd16c96afa5" />
 
 </p>
 
