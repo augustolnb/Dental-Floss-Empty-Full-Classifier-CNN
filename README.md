@@ -30,9 +30,11 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
 ├── card28.ipynb               # Código com o modelo 
-├── requirements.txt
-└── README.md
-└── dataset_dental_floss.zip   # Dataset 
+├── CNN-Classifier-Model.h5    # Modelo salvo
+├── dataset_dental_floss.zip   # Dataset
+├── README.md
+└── requirements.txt
+ 
 ```
  
 ## 📊 O Dataset
@@ -155,8 +157,8 @@ A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/augustolnb/Dental-Floss-Empty-Full-Classifier-CNN.git
+    cd /caminho/do/repositorio/Dental-Floss-Empty-Full-Classifier-CNN
     ```
 
 2.  **Crie e ative um ambiente virtual (Recomendado):**
@@ -205,10 +207,10 @@ def prever_nova_imagem(caminho_imagem, model):
 
 # Exemplo de uso
 # caminho_da_nova_imagem = 'caminho/para/sua/imagem.jpg'
-# classe_predita, probabilidades = prever_nova_imagem(caminho_da_nova_imagem, model)
+# classe_prevista, probabilidades = prever_nova_imagem(caminho_da_nova_imagem, model)
 
 # if classe_predita:
-#     print(f"A imagem é provavelmente: {classe_predita}")
+#     print(f"A imagem é provavelmente: {classe_prevista}")
 #     print(f"Probabilidade de ser 'empty': {probabilidades[0]:.2f}")
 #     print(f"Probabilidade de ser 'full': {probabilidades[1]:.2f}")
 
@@ -217,8 +219,8 @@ def prever_nova_imagem(caminho_imagem, model):
 
 ## ✒️ Autor
 
-**Augusto** - `[Seu Sobrenome]`
+**Lucas Augusto Nunes de Barros** - `[Seu Sobrenome]`
 
--   **LinkedIn:** `[URL do seu LinkedIn]`
--   **GitHub:** `[URL do seu GitHub]`
+-   **LinkedIn:** `[https://www.linkedin.com/company/login/]`
+-   **GitHub:** `[https://github.com/augustolnb]`
 
