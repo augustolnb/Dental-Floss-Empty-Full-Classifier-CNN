@@ -139,6 +139,11 @@ A matriz de confusão abaixo ilustra o desempenho do modelo:
   <img width="519" height="417" alt="image" src="https://github.com/user-attachments/assets/302a5f4c-95a2-41df-97c7-476d03d77e4d" />
 </p>
 
+O modelo obteve valor de AUC = 0.9 e a respectiva curva ROC é apresentada a seguir:
+<p align="center">
+  <img width="522" height="478" alt="image" src="https://github.com/user-attachments/assets/69b1bb68-27f5-4037-96ec-4415bfa28777" />
+</p>
+
 ## Fazendo Previsões Localmente
 
 ### Pré-requisitos para execução local
