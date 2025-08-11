@@ -38,7 +38,9 @@ A base de dados do projeto é um dataset criado especificamente para este proble
 -   **Total de Imagens:** 4066
 -   **Classes:** `Cheia` e `Vazia`
 -   **Origem:** Fotos tiradas manualmente com um smartphone, garantindo uma variedade de ângulos, iluminações e posicionamentos.
-
+-   **Divisão:** O dataset foi divido em 75% das amostras para treinamento, 15% para teste e 10% para validação.
+-   **Técnicas:** O conjunto de treinamento foi aumentando artificialmente através da técnica de Data Augmentation.
+<br>
 <p align="center">
   <img width="264" height="353" alt="image" src="https://github.com/user-attachments/assets/3dfe1d88-744a-44be-9bb7-6c592e92ee1c" />
   &nbsp;&nbsp;&nbsp;&nbsp;    <img width="260" height="320" alt="image" src="https://github.com/user-attachments/assets/5bad0042-9ae1-4f57-af1a-b885aa171146" />
