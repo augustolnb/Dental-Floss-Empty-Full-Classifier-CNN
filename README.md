@@ -195,7 +195,7 @@ $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Cl
 #### Exemplo de predição com imagens inéditas:
 
 <p align='center'>
-  <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/a2d89146-6868-422f-9ee9-cbcd7d231e1b" />
+  <img width="731" height="612" alt="image" src="https://github.com/user-attachments/assets/65ee2c64-2b1f-4c40-9b2a-b164bcf597fb" />
 </p>
 
 
