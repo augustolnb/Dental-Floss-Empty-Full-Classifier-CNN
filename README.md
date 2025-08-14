@@ -187,7 +187,7 @@ Para realizar previsões, é possível usar o modelo treinado **CNN-Classifier-M
 Basta passar como argumento do código o caminho para o modelo salvo e para a pasta das imagens que gostaria de classificar.
 
 ```sh
-$ python3.12 predict_offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Classifier-Model.h5 --pasta_imagens /caminho/das/imagens
+$ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Classifier-Model.h5 --pasta_imagens /caminho/das/imagens
 
 ```
 
