@@ -97,51 +97,60 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 ## O Modelo da Rede Neural
 
-O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 3 camadas convolucionais.
+- O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 6 camadas convolucionais. 
+- Para a definição da estrutura e dos hiperparâmetros foram aplicadas técnicas como **Otimização Bayesiana** e **Grid Search**.
 
 ### Arquitetura
 
 O modelo foi construído com a biblioteca TensorFlow/Keras com a seguinte estrutura:
 
 ```python
-model = tf.keras.models.Sequential([
-    tf.keras.layers.Input(shape=(128, 128, 1)),
+    model = keras.Sequential([
+    layers.Input(shape=(128, 128, 1)),
 
-    tf.keras.layers.Conv2D(32, 3, activation='relu'),
-    tf.keras.layers.MaxPooling2D(),
-    tf.keras.layers.Conv2D(64, 3, activation='relu'),
-    tf.keras.layers.MaxPooling2D(),
-    tf.keras.layers.Conv2D(128, 3, activation='relu'),
-    tf.keras.layers.MaxPooling2D(),
+    layers.Conv2D(160, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(128, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(144, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(240, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(112, 3, activation='relu'),
+    layers.MaxPooling2D(),
 
-    tf.keras.layers.Flatten(),
-    tf.keras.layers.Dense(128, activation='relu'),
-    
-    tf.keras.layers.Dropout(dropout_rate),
-    
-    tf.keras.layers.Dense(num_classes) 
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    layers.Dropout(0.45),
+    layers.Dense(num_classes)
 ])
 ```
 
 ### Resultados
 
-Após o treinamento com os hiperparâmetros inicialmente propostos foram feitos testes utilizando a técnica de **Grid Search** para otimizá-los.
-Por fim, os valores utilizados para o treinamento do modelo foram:
+Para definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
+Por fim, os valores utilizados para o treinamento final do modelo foram:
 
-- **Taxa de Aprendizagem (Learning Rate):** 1e-3
-- **Taxa de Dropout:** 0.4
-- **Épocas de Treinamento:** 13
+- **Taxa de Aprendizagem (Learning Rate):** 3.79e-5
+- **Taxa de Dropout:** 0.45
+- **Neurônios na Camada Densa:** 128
 - **Tamanho do Lote (Batch Size):** 32
+
+Gráficos de acurácia e perda durante o treino e a validação:
+
+<p align="center">
+  <img width="855" height="473" alt="image" src="https://github.com/user-attachments/assets/ee1c3b42-5a15-43fe-b521-03eda09e7c7e" />
+</p>
 
 A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 <p align="center">
-  <img width="519" height="417" alt="image" src="https://github.com/user-attachments/assets/302a5f4c-95a2-41df-97c7-476d03d77e4d" />
+  <img width="378" height="393" alt="image" src="https://github.com/user-attachments/assets/53e6adc5-4ad7-4dfd-896f-e0253888c6af" />
 </p>
 
-O modelo obteve valor de AUC = 0.9 e a respectiva curva ROC é apresentada a seguir:
+O modelo obteve valor de AUC = 0.9116 e a respectiva curva ROC é apresentada a seguir:
 <p align="center">
-  <img width="522" height="478" alt="image" src="https://github.com/user-attachments/assets/69b1bb68-27f5-4037-96ec-4415bfa28777" />
+  <img width="514" height="394" alt="image" src="https://github.com/user-attachments/assets/d520e9ac-0710-4f98-86e3-3811d118a58f" />
 </p>
 
 ## Fazendo Previsões Localmente
@@ -181,10 +190,11 @@ Basta passar como argumento do código o caminho para o modelo salvo e para a pa
 $ python3.12 predict_offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Classifier-Model.h5 --pasta_imagens /caminho/das/imagens
 
 ```
-Exemplo de saída:
+
+Exemplo de predição com imagens inéditas:
 
 <p align='center'>
-  <img width="402" height="162" alt="image" src="https://github.com/user-attachments/assets/d3e48eaa-5a1f-4e19-88bd-a977fbd88083" />
+  <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/a2d89146-6868-422f-9ee9-cbcd7d231e1b" />
 </p>
 
 
