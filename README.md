@@ -153,7 +153,9 @@ O modelo obteve valor de AUC = 0.9116 e a respectiva curva ROC é apresentada a 
   <img width="514" height="394" alt="image" src="https://github.com/user-attachments/assets/d520e9ac-0710-4f98-86e3-3811d118a58f" />
 </p>
 
-## Fazendo Previsões Localmente
+## Fazendo Previsões
+
+- Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab, também é possível baixar o arquivo do modelo para fazer classificações localmente.
 
 ### Pré-requisitos para execução local
 
@@ -191,7 +193,7 @@ $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Cl
 
 ```
 
-Exemplo de predição com imagens inéditas:
+#### Exemplo de predição com imagens inéditas:
 
 <p align='center'>
   <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/a2d89146-6868-422f-9ee9-cbcd7d231e1b" />
