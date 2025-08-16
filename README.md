@@ -155,13 +155,13 @@ E as seguintes configurações de **data augmentation**:
 - Espelhamentos horizontal 
 
 
-Gráficos de acurácia e perda durante o treino e a validação:
+#### Gráficos de acurácia e perda durante o treino e a validação:
 
 <p align="center">
 <img width="855" height="473" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
 </p>
 
-A matriz de confusão abaixo ilustra o desempenho do modelo:
+#### A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 <p align="center">
  <img width="308" height="316" alt="image" src="https://github.com/user-attachments/assets/d9a2a46b-999f-4708-a7c8-8fd91bee7e09" />
