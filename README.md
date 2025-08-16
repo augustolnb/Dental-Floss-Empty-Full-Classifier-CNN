@@ -98,7 +98,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 ## Pré-processamento Final
 
-Ao fim dos primeiros teste, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes com o objetivo de melhorar as métricas do modelo.
+Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes com o objetivo de melhorar as métricas do modelo.
 
 - O dataset final esta armazenado no Google Drive devido ao seu tamanho.
 - Esse dataset possui imagens RGB com dimensões 512x512
@@ -199,8 +199,9 @@ Basta passar como argumento do código o caminho para o modelo salvo e para a pa
 $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Classifier-Model.h5 --pasta_imagens /caminho/das/imagens
 
 ```
-
-#### Exemplo de predição com imagens inéditas:
+<br><br>
+### Exemplo de predição com imagens inéditas:
+#### Via Google Colab
 
 <p align='center'>
 <img width="737" height="860" alt="image" src="https://github.com/user-attachments/assets/fd535fae-73e8-4002-8a7a-16b2e87da51f" />
