@@ -1,7 +1,7 @@
 # Classificador de Embalagens de Fio Dental
 
 ## Observação Importante!!
-Devido ao tamanho dos arquivos tanto o **dataset** final como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
+Devido ao tamanho dos arquivos tanto o **dataset final(dataset-dental-floss(256x256-RGB).zip)**  como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
 
 ## Descrição do Projeto
 
@@ -24,10 +24,9 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 │   ├── 01-organizar_DS.py
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
-├── card28.ipynb               # Código com o modelo 
-├── CNN-Classifier-Model.h5    # Modelo salvo
-├── dataset_dental_floss.zip   # Dataset
-├── predict_offline.py         # Código para execução do modelo salvo
+├── model14_final.h5    # Modelo salvo
+├── dataset_dental_floss(128x128-GRAY).zip   # Dataset testado inicialmente
+├── predict_offline.py            # Código para execução do modelo salvo
 ├── README.md
 └── requirements.txt
  
@@ -40,7 +39,7 @@ A base de dados do projeto é um dataset criado especificamente para este proble
 -   **Total de Imagens:** 4066
 -   **Classes:** `Cheia` e `Vazia`
 -   **Origem:** Fotos tiradas manualmente com um smartphone, garantindo uma variedade de ângulos, iluminações e posicionamentos.
--   **Divisão:** O dataset foi divido em 75% das amostras para treinamento, 15% para teste e 10% para validação.
+-   **Divisão:** O dataset foi divido em 75% das amostras para treinamento, 15% para validação e 10% para teste.
 -   **Técnicas:** O conjunto de treinamento foi aumentando artificialmente através da técnica de Data Augmentation.
 <br>
 <p align="center">
@@ -50,7 +49,7 @@ A base de dados do projeto é um dataset criado especificamente para este proble
 </p>
 
 
-### Etapas de Pré-processamento
+### Etapas de Pré-processamento Inicial (128x128-GRAY)
 
 Para garantir que o modelo recebesse dados adequados, as imagens originais passaram por um **pipeline de pré-processamento** dividido em três etapas principais, utilizando os scripts localizados na pasta `data_pipeline/`.
 
@@ -97,9 +96,16 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 </p>
 
+## Pré-processamento Final
+
+Ao fim dos primeiros teste, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes com o objetivo de melhorar as métricas do modelo.
+
+- O dataset final esta armazenado no Google Drive devido ao seu tamanho.
+- Esse dataset possui imagens RGB com dimensões 512x512
+
 ## O Modelo da Rede Neural
 
-- O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 5 camadas convolucionais. 
+- O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 4 camadas convolucionais. 
 - Para a definição da estrutura e dos hiperparâmetros foram aplicadas técnicas como **Otimização Bayesiana** e **Grid Search**.
 
 ### Arquitetura
@@ -107,23 +113,21 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 O modelo foi construído com a biblioteca TensorFlow/Keras com a seguinte estrutura:
 
 ```python
-    model = keras.Sequential([
-    layers.Input(shape=(128, 128, 1)),
+final_model = keras.Sequential([
+    layers.Input(shape=(128, 128, 3)),
 
-    layers.Conv2D(160, 3, activation='relu'),
+    layers.Conv2D(224, 3, activation='relu'),
     layers.MaxPooling2D(),
-    layers.Conv2D(128, 3, activation='relu'),
+    layers.Conv2D(16, 3, activation='relu'),
     layers.MaxPooling2D(),
-    layers.Conv2D(144, 3, activation='relu'),
-    layers.MaxPooling2D(),
-    layers.Conv2D(240, 3, activation='relu'),
+    layers.Conv2D(64, 3, activation='relu'),
     layers.MaxPooling2D(),
     layers.Conv2D(112, 3, activation='relu'),
     layers.MaxPooling2D(),
 
     layers.Flatten(),
-    layers.Dense(128, activation='relu'),
-    layers.Dropout(0.45),
+    layers.Dense(192, activation='relu'),
+    layers.Dropout(0.25),
     layers.Dense(num_classes)
 ])
 ```
@@ -133,26 +137,27 @@ O modelo foi construído com a biblioteca TensorFlow/Keras com a seguinte estrut
 Para definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
 Por fim, os valores utilizados para o treinamento final do modelo foram:
 
-- **Taxa de Aprendizagem (Learning Rate):** 3.79e-5
-- **Taxa de Dropout:** 0.45
-- **Neurônios na Camada Densa:** 128
+- **Taxa de Aprendizagem (Learning Rate):** 4.66428e-4
+- **Taxa de Dropout:** 0.25
+- **Neurônios na Camada Densa:** 192
 - **Tamanho do Lote (Batch Size):** 32
 
 Gráficos de acurácia e perda durante o treino e a validação:
 
 <p align="center">
-  <img width="855" height="473" alt="image" src="https://github.com/user-attachments/assets/ee1c3b42-5a15-43fe-b521-03eda09e7c7e" />
+<img width="855" height="473" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
 </p>
 
 A matriz de confusão abaixo ilustra o desempenho do modelo:
 
 <p align="center">
-  <img width="378" height="393" alt="image" src="https://github.com/user-attachments/assets/53e6adc5-4ad7-4dfd-896f-e0253888c6af" />
+ <img width="308" height="316" alt="image" src="https://github.com/user-attachments/assets/d9a2a46b-999f-4708-a7c8-8fd91bee7e09" />
+
 </p>
 
-O modelo obteve valor de AUC = 0.9116 e a respectiva curva ROC é apresentada a seguir:
+O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a seguir:
 <p align="center">
-  <img width="514" height="394" alt="image" src="https://github.com/user-attachments/assets/d520e9ac-0710-4f98-86e3-3811d118a58f" />
+<img width="314" height="316" alt="image" src="https://github.com/user-attachments/assets/69f2f408-ef96-4df0-9e3d-cda3bf042562" />
 </p>
 
 ## Fazendo Previsões
@@ -198,7 +203,7 @@ $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Cl
 #### Exemplo de predição com imagens inéditas:
 
 <p align='center'>
-  <img width="731" height="612" alt="image" src="https://github.com/user-attachments/assets/65ee2c64-2b1f-4c40-9b2a-b164bcf597fb" />
+<img width="737" height="860" alt="image" src="https://github.com/user-attachments/assets/fd535fae-73e8-4002-8a7a-16b2e87da51f" />
 </p>
 
 
