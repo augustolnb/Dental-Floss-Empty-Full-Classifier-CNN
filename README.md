@@ -1,7 +1,7 @@
 # Classificador de Embalagens de Fio Dental
 
 ## Observação Importante!!
-Devido ao tamanho dos arquivos, tanto o dataset final - **dataset-dental-floss(256x256-RGB).zip** -  como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
+Devido ao tamanho dos arquivos, tanto o dataset final - **dataset-dental-floss(512x512-RGB).zip** -  como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
 
 ## Descrição do Projeto
 
