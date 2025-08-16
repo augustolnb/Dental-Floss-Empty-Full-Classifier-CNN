@@ -1,5 +1,8 @@
 # Classificador de Embalagens de Fio Dental
 
+## Observação Importante!!
+Devido ao tamanho dos arquivos tanto o **dataset** final como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
+
 ## Descrição do Projeto
 
 Este projeto apresenta uma solução de Visão Computacional proposta como trabalho final do **bootcamp de machine learning** do grupo de pesquisa LAMIA.
