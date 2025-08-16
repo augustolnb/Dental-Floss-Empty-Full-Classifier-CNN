@@ -20,13 +20,15 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 
 ```
 .
-├── data-pipeline/             # Scripts do pipeline de pré-processamento do dataset.
+├── data-pipeline/                 # Scripts do pipeline de pré-processamento do dataset.
 │   ├── 01-organizar_DS.py
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
-├── model14_final.h5    # Modelo salvo
+├── Relatorio 28- Lucas Augusto-V3.pdf       
+├── card28-V3.xlsx                           # Arquivo com dados de testes
+├── model14_final.h5                         # Modelo salvo  
 ├── dataset_dental_floss(128x128-GRAY).zip   # Dataset testado inicialmente
-├── predict_offline.py            # Código para execução do modelo salvo
+├── predict_offline.py                       # Código para execução do modelo salvo
 ├── README.md
 └── requirements.txt
  
@@ -192,11 +194,11 @@ O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a 
 
 ### Executando a Rede
 
-Para realizar previsões, é possível usar o modelo treinado **CNN-Classifier-Model.h5** com o script **predict-offline.py**.
+Para realizar previsões, é possível usar o modelo treinado **model14_final.h5** com o script **predict-offline.py**.
 Basta passar como argumento do código o caminho para o modelo salvo e para a pasta das imagens que gostaria de classificar.
 
 ```sh
-$ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/CNN-Classifier-Model.h5 --pasta_imagens /caminho/das/imagens
+$ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model14_final.h5 --pasta_imagens /caminho/das/imagens
 
 ```
 <br><br>
