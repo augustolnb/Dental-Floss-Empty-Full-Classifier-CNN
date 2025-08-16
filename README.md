@@ -100,7 +100,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 ## Pré-processamento Final
 
-Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes com o objetivo de melhorar as métricas do modelo.
+Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes, com o objetivo de melhorar as métricas do modelo.
 
 - O dataset final esta armazenado no Google Drive devido ao seu tamanho.
 - Esse dataset possui imagens RGB com dimensões 512x512
@@ -136,13 +136,24 @@ final_model = keras.Sequential([
 
 ### Resultados
 
-Para definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
+Para a definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
 Por fim, os valores utilizados para o treinamento final do modelo foram:
 
 - **Taxa de Aprendizagem (Learning Rate):** 4.66428e-4
 - **Taxa de Dropout:** 0.25
 - **Neurônios na Camada Densa:** 192
 - **Tamanho do Lote (Batch Size):** 32
+
+O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. O modelo final utilizou de imagens com os seguintes parâmetros:
+
+- Dimensões: 128x128
+- Escala de Cor: RGB
+
+E as seguintes configurações de **data augmentation**:
+
+- Fator de Contraste: 20%
+- Espelhamentos horizontal 
+
 
 Gráficos de acurácia e perda durante o treino e a validação:
 
