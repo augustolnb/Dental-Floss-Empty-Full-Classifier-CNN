@@ -15,6 +15,10 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 
 <img width="1133" height="356" alt="image" src="https://github.com/user-attachments/assets/bc6c04d2-bd38-4818-89cd-728a5f648938" />
 
+### Pipeline do Projeto
+
+  <img width="851" height="356" alt="image" src="https://github.com/user-attachments/assets/e7b07326-0383-4f7e-93d4-3d59aeeeefac" />
+
 
 ## Organização do Projeto
 
@@ -275,7 +279,7 @@ $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model1
 ```
 <br>
 
-## Predições com imagens inéditas:
+## Predições com imagens inéditas
 
 ### Modelo RGB
 <p align='center'>
@@ -286,6 +290,10 @@ $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model1
 <p align='center'>
   <img width="829" height="822" alt="image" src="https://github.com/user-attachments/assets/f395c3c6-e116-43e0-9d5c-5c412f1ae181" />
 </p>
+
+### Resultados Obtidos 
+  <img width="583" height="707" alt="image" src="https://github.com/user-attachments/assets/351507b3-f1fa-4fd8-89ca-99c92c3ba06f" />
+
 
 
 ## ✒️ Autor
