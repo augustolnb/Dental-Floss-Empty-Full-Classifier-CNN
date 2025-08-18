@@ -24,9 +24,10 @@ O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras p
 │   ├── 01-organizar_DS.py
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
-├── Relatorio 28- Lucas Augusto-V3.pdf       
-├── card28-V3.xlsx                           # Arquivo com dados de testes
-├── model14_final.h5                         # Modelo salvo  
+├── Relatorio28-LucasAugusto-V4.pdf       
+├── card28_V4.xlsx                           # Arquivo com dados de testes
+├── modelo_cinza-final.h5                    # Modelo cinza salvo
+├── modelo_rgb-final.h5                      # Modelo rgb salvo  
 ├── dataset_dental_floss(128x128-GRAY).zip   # Dataset testado inicialmente
 ├── predict_offline.py                       # Código para execução do modelo salvo
 ├── README.md
@@ -105,14 +106,23 @@ Ao fim dos primeiros testes, o dataset com as images originais foi processados n
 - O dataset final esta armazenado no Google Drive devido ao seu tamanho.
 - Esse dataset possui imagens RGB com dimensões 512x512
 
-## O Modelo da Rede Neural
+## Os Modelos de Rede Neural
 
-- O projeto tem como base uma **Rede Neural Convolucional (CNN)** com 4 camadas convolucionais. 
-- Para a definição da estrutura e dos hiperparâmetros foram aplicadas técnicas como **Otimização Bayesiana** e **Grid Search**.
+- Para o projeto foram desenvolvidas duas **Redes Neurais Convolucionais (CNN)**, uma contendo 4 e outra contendo 5 camadas convolucionais. 
+- Para a definição da estrutura e dos hiperparâmetros foram aplicadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
 
-### Arquitetura
+### Arquiteturas
 
-O modelo foi construído com a biblioteca TensorFlow/Keras com a seguinte estrutura:
+Os modelos foram construídos com a biblioteca TensorFlow/Keras, as estruturas são apresentadas abaixo.
+
+#### Modelo Alimentado por Imagens RGB
+
+Hiperparâmetros:
+
+- **Taxa de Aprendizagem (Learning Rate):** 4.66428e-4
+- **Taxa de Dropout:** 0.25
+- **Neurônios na Camada Densa:** 192
+- **Tamanho do Lote (Batch Size):** 32
 
 ```python
 final_model = keras.Sequential([
@@ -134,15 +144,42 @@ final_model = keras.Sequential([
 ])
 ```
 
+#### Modelo Alimentado por Imagens em Escala de Cinza
+
+Hiperparâmetros:
+
+- **Taxa de Aprendizagem (Learning Rate):** 7e-05
+- **Taxa de Dropout:** 0.3
+- **Neurônios na Camada Densa:** 112
+- **Tamanho do Lote (Batch Size):** 32
+
+```python
+final_model = keras.Sequential([
+    layers.Input(shape=(128, 128, 1)),
+
+    layers.Conv2D(160, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(128, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(144, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(240, 3, activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(112, 3, activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Flatten(),
+    layers.Dense(112, activation='relu'),
+    layers.Dropout(0.3),
+    layers.Dense(num_classes)
+])
+```
+
 ### Resultados
 
 Para a definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
-Por fim, os valores utilizados para o treinamento final do modelo foram:
 
-- **Taxa de Aprendizagem (Learning Rate):** 4.66428e-4
-- **Taxa de Dropout:** 0.25
-- **Neurônios na Camada Densa:** 192
-- **Tamanho do Lote (Batch Size):** 32
+
 
 O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. O modelo final utilizou de imagens com os seguintes parâmetros:
 
