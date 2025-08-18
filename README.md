@@ -13,6 +13,7 @@ Uma aplicação plausível seria automatizar o processo de verificação do prod
 
 Os sistemas foram desenvolvidos em Python, utilizando a biblioteca TensorFlow/Keras para a construção e treinamento do modelo, no ambiente online do Google Colab.
 
+<br>
 <img width="1133" height="356" alt="image" src="https://github.com/user-attachments/assets/bc6c04d2-bd38-4818-89cd-728a5f648938" />
 
 ### Pipeline do Projeto
