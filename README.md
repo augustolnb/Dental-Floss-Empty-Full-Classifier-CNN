@@ -112,6 +112,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 </p>
 
 <br>
+
 ### Pré-processamento Final (512x512-RGB)
 
 Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes, com o objetivo de melhorar as métricas do modelo.
