@@ -177,25 +177,20 @@ final_model = keras.Sequential([
 
 ### Resultados
 
-Para a definição dos hiperparâmetros foram utilizadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
+O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**.
 
+- Um dos modelos é alimentado com imagens de dimensões 128x128 em RGB
+- E o outro utiliza imagens de mesma dimensão mas em escala de cinza.
 
-
-O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. O modelo final utilizou de imagens com os seguintes parâmetros:
-
-- Dimensões: 128x128
-- Escala de Cor: RGB
-
-E as seguintes configurações de **data augmentation**:
+Para ambos os modelos, apesar das variações testadas, foram utilizadas as seguintes configurações de **data augmentation**:
 
 - Fator de Contraste: 20%
-- Espelhamentos horizontal 
-
+- Espelhamento horizontal 
 
 #### Gráficos de acurácia e perda durante o treino e a validação:
 
 <p align="center">
-<img width="855" height="473" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
+<img width="755" height="373" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
 </p>
 
 #### A matriz de confusão abaixo ilustra o desempenho do modelo:
