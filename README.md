@@ -271,13 +271,13 @@ Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab
 
 4. **Executando a Rede:**
 
-Para realizar previsões, é possível usar o modelo treinado **model14_final.h5** com o script **predict-offline.py**.
-Basta passar como argumento do código o caminho para o modelo salvo e para a pasta das imagens que gostaria de classificar.
-
-```sh
-$ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model14_final.h5 --pasta_imagens /caminho/das/imagens
-
-```
+    Para realizar previsões, é possível usar o modelo treinado **model14_final.h5** com o script **predict-offline.py**.
+    Basta passar como argumento do código o caminho para o modelo salvo e para a pasta das imagens que gostaria de classificar.
+    
+    ```sh
+    $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model14_final.h5 --pasta_imagens /caminho/das/imagens
+    
+    ```
 <br>
 
 ## Predições com imagens inéditas
