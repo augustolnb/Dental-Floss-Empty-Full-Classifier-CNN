@@ -125,9 +125,7 @@ Ao fim dos primeiros testes, o dataset com as images originais foi processados n
 - Para o projeto foram desenvolvidas duas **Redes Neurais Convolucionais (CNN)**, uma contendo 4 e outra contendo 5 camadas convolucionais. 
 - Para a definição da estrutura e dos hiperparâmetros foram aplicadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
 
-### Arquiteturas
-
-#### Modelo Alimentado por Imagens RGB
+### Modelo Alimentado por Imagens RGB
 
 Hiperparâmetros:
 
@@ -156,7 +154,7 @@ final_model = keras.Sequential([
 ])
 ```
 
-#### Modelo Alimentado por Imagens em Escala de Cinza
+### Modelo Alimentado por Imagens em Escala de Cinza
 
 Hiperparâmetros:
 
