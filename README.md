@@ -313,7 +313,7 @@ Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab
   <img width="583" height="707" alt="image" src="https://github.com/user-attachments/assets/351507b3-f1fa-4fd8-89ca-99c92c3ba06f" />
 </p>
 
-Apesar dos resultados similares obtidos durante os testes inicias, quando submetidos a imagens reais o modelo que recebe imagens RGB parece ser confundido mais facilmente, principalmente quando as embalagens estão rotuladas como cheias. Esse resultado endossa a ideia presente na literatura que reduzir dimensões de cores ajuda a tornar a identificação de imagens por redes neurais mais robusta.
+Apesar dos resultados similares obtidos durante os testes inicias, quando submetidos a imagens inéditas o modelo que  RGB parece ser confundido mais facilmente, principalmente quando as embalagens estão rotuladas como cheias. Esse resultado endossa a ideia presente na literatura que reduzir dimensões de cores ajuda a tornar a identificação de imagens por redes neurais mais robusta.
 
 ## ✒️ Autor
 
