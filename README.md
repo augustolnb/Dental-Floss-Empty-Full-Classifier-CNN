@@ -99,7 +99,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 </p>
 
-## Pré-processamento Final
+### Pré-processamento Final (512x512-RGB)
 
 Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes, com o objetivo de melhorar as métricas do modelo.
 
@@ -175,7 +175,7 @@ final_model = keras.Sequential([
 ])
 ```
 
-### Resultados
+## Resultados
 
 O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. Um dos modelos é alimentado com imagens de dimensões 128x128 em RGB, enquanto o outro utiliza imagens de mesmas dimensões mas em escala de cinza.
 
