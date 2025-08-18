@@ -280,7 +280,7 @@ Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab
     ```
 <br>
 
-## Predições com imagens inéditas
+## Comparação dos Modelos com Imagens Inéditas
 
 ### Modelo RGB
 <p align='center'>
