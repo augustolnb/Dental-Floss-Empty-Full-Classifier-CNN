@@ -177,15 +177,14 @@ final_model = keras.Sequential([
 
 ### Resultados
 
-O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**.
-
-- Um dos modelos é alimentado com imagens de dimensões 128x128 em RGB
-- E o outro utiliza imagens de mesma dimensão mas em escala de cinza.
+O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. Um dos modelos é alimentado com imagens de dimensões 128x128 em RGB, enquanto o outro utiliza imagens de mesmas dimensões mas em escala de cinza.
 
 Para ambos os modelos, apesar das variações testadas, foram utilizadas as seguintes configurações de **data augmentation**:
 
 - Fator de Contraste: 20%
 - Espelhamento horizontal 
+
+### Modelo RGB
 
 #### Gráficos de acurácia e perda durante o treino e a validação:
 
@@ -193,17 +192,47 @@ Para ambos os modelos, apesar das variações testadas, foram utilizadas as segu
 <img width="755" height="373" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
 </p>
 
-#### A matriz de confusão abaixo ilustra o desempenho do modelo:
+#### Matriz de confusão.
+
+O modelo obteve taxa de acerto de 90,23% quando analisado com o conjunto de teste.
 
 <p align="center">
  <img width="308" height="316" alt="image" src="https://github.com/user-attachments/assets/d9a2a46b-999f-4708-a7c8-8fd91bee7e09" />
 
 </p>
 
+#### Curva ROC
+
 O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a seguir:
+
 <p align="center">
 <img width="314" height="316" alt="image" src="https://github.com/user-attachments/assets/69f2f408-ef96-4df0-9e3d-cda3bf042562" />
 </p>
+
+### Modelo Cinza
+
+#### Gráficos de acurácia e perda durante o treino e a validação:
+
+<p align="center">
+  <img width="784" height="345" alt="image" src="https://github.com/user-attachments/assets/ee564ca9-51dd-47e4-849b-d2bb721a9705" />
+</p>
+
+#### Matriz de confusão.
+
+O modelo obteve taxa de acerto de 87,5% quando analisado com o conjunto de teste.
+
+<p align="center">
+  <img width="308" height="316" alt="image" src="https://github.com/user-attachments/assets/3ba4b3de-8673-41e8-aa19-4fee184108c6" />
+</p>
+
+#### Curva ROC
+
+O modelo obteve valor de AUC = 0.9372 e a respectiva curva ROC é apresentada a seguir:
+
+<p align="center">
+<img width="314" height="316" alt="image" src="https://github.com/user-attachments/assets/a2fc0dd8-85a3-42d2-94da-02c80b8c282a" />
+</p>
+
 
 ## Fazendo Previsões
 
