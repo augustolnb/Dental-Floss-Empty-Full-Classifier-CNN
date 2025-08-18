@@ -61,6 +61,7 @@ A base de dados do projeto é um dataset criado especificamente para este proble
 
 Para garantir que o modelo recebesse dados adequados, as imagens originais passaram por um **pipeline de pré-processamento** dividido em três etapas principais, utilizando os scripts localizados na pasta `data_pipeline/`.
 
+<br>
 **1. Organizando as Imagens do Dataset (`data_pipeline/01-organizar_DS.py`)**
 
 Este script foi o ponto de partida para a estruturação dos dados. Ele foi responsável por organizar as imagens originais, separando-as em suas respectivas pastas de classe (`cheia`/`vazia`) 
@@ -68,8 +69,7 @@ Este script foi o ponto de partida para a estruturação dos dados. Ele foi resp
 ```sh
 $ python3.12 01-organizar_DS.py --pasta_entrada /caminho/das/fotos/originais/do/dataset/ --pasta_saida /caminho/das/fotos/renomedas/por/classe --prefixo nome-da-classe
 ```
-
-
+<br>
 **2. Selecionando as Região de Interesse (ROI) (`data_pipeline/02-selecionar_ROI.py`)**
 
 As fotos originais continham muito ruído de fundo. Para que o modelo focasse exclusivamente na embalagem, este script foi utilizado para cortar a Região de Interesse (ROI) de cada imagem.
@@ -87,6 +87,7 @@ $ python3.12 02-selecionar_ROI.py --pasta_entrada /caminho/das/fotos/renomeadas 
 
 </p>
 
+<br>
 **3. Redimensionamento e Convertendo para Cinza  (`data_pipeline/03-ajustar_DS.py`)**
 
 A etapa final de preparação. Este script processa as imagens cortadas para:
@@ -104,6 +105,7 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 </p>
 
+<br>
 ### Pré-processamento Final (512x512-RGB)
 
 Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes, com o objetivo de melhorar as métricas do modelo.
@@ -189,13 +191,13 @@ Para ambos os modelos, apesar das variações testadas, foram utilizadas as segu
 
 ### Modelo RGB
 
-#### Gráficos de acurácia e perda durante o treino e a validação:
+#### Gráficos de acurácia e perda durante o treino e a validação
 
 <p align="center">
 <img width="755" height="373" alt="image" src="https://github.com/user-attachments/assets/937d1dc7-7467-4645-beed-35d4b2afb8e7" />
 </p>
 
-#### Matriz de confusão.
+#### Matriz de confusão
 
 O modelo obteve taxa de acerto de 90,23% quando analisado com o conjunto de teste.
 
@@ -206,7 +208,7 @@ O modelo obteve taxa de acerto de 90,23% quando analisado com o conjunto de test
 
 #### Curva ROC
 
-O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a seguir:
+O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a seguir.
 
 <p align="center">
 <img width="314" height="316" alt="image" src="https://github.com/user-attachments/assets/69f2f408-ef96-4df0-9e3d-cda3bf042562" />
@@ -214,13 +216,13 @@ O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a 
 
 ### Modelo Cinza
 
-#### Gráficos de acurácia e perda durante o treino e a validação:
+#### Gráficos de acurácia e perda durante o treino e a validação
 
 <p align="center">
   <img width="784" height="365" alt="image" src="https://github.com/user-attachments/assets/ee564ca9-51dd-47e4-849b-d2bb721a9705" />
 </p>
 
-#### Matriz de confusão.
+#### Matriz de confusão
 
 O modelo obteve taxa de acerto de 87,5% quando analisado com o conjunto de teste.
 
@@ -230,7 +232,7 @@ O modelo obteve taxa de acerto de 87,5% quando analisado com o conjunto de teste
 
 #### Curva ROC
 
-O modelo obteve valor de AUC = 0.9372 e a respectiva curva ROC é apresentada a seguir:
+O modelo obteve valor de AUC = 0.9372 e a respectiva curva ROC é apresentada a seguir.
 
 <p align="center">
 <img width="314" height="316" alt="image" src="https://github.com/user-attachments/assets/a2fc0dd8-85a3-42d2-94da-02c80b8c282a" />
@@ -239,7 +241,7 @@ O modelo obteve valor de AUC = 0.9372 e a respectiva curva ROC é apresentada a 
 
 ## Fazendo Previsões
 
-- Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab, também é possível baixar o arquivo do modelo para fazer classificações localmente.
+Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab, também é possível baixar o arquivo do modelo para fazer classificações localmente.
 
 ### Pré-requisitos para execução local
 
@@ -267,7 +269,7 @@ O modelo obteve valor de AUC = 0.9372 e a respectiva curva ROC é apresentada a 
     pip install -r requirements.txt
     ```
 
-### Executando a Rede
+4. **Executando a Rede:**
 
 Para realizar previsões, é possível usar o modelo treinado **model14_final.h5** com o script **predict-offline.py**.
 Basta passar como argumento do código o caminho para o modelo salvo e para a pasta das imagens que gostaria de classificar.
