@@ -68,6 +68,7 @@ A base de dados do projeto é um dataset criado especificamente para este proble
 Para garantir que o modelo recebesse dados adequados, as imagens originais passaram por um **pipeline de pré-processamento** dividido em três etapas principais, utilizando os scripts localizados na pasta `data_pipeline/`.
 
 <br>
+
 **1. Organizando as Imagens do Dataset (`data_pipeline/01-organizar_DS.py`)**
 
 Este script foi o ponto de partida para a estruturação dos dados. Ele foi responsável por organizar as imagens originais, separando-as em suas respectivas pastas de classe (`cheia`/`vazia`) 
@@ -76,6 +77,7 @@ Este script foi o ponto de partida para a estruturação dos dados. Ele foi resp
 $ python3.12 01-organizar_DS.py --pasta_entrada /caminho/das/fotos/originais/do/dataset/ --pasta_saida /caminho/das/fotos/renomedas/por/classe --prefixo nome-da-classe
 ```
 <br>
+
 **2. Selecionando as Região de Interesse (ROI) (`data_pipeline/02-selecionar_ROI.py`)**
 
 As fotos originais continham muito ruído de fundo. Para que o modelo focasse exclusivamente na embalagem, este script foi utilizado para cortar a Região de Interesse (ROI) de cada imagem.
@@ -94,6 +96,7 @@ $ python3.12 02-selecionar_ROI.py --pasta_entrada /caminho/das/fotos/renomeadas 
 </p>
 
 <br>
+
 **3. Redimensionamento e Convertendo para Cinza  (`data_pipeline/03-ajustar_DS.py`)**
 
 A etapa final de preparação. Este script processa as imagens cortadas para:
@@ -113,11 +116,11 @@ python3.12 03-ajustar_DS.py --pasta_entrada /caminho/das/regiões/de/interesse/r
 
 <br>
 
-### Pré-processamento Final (512x512-RGB)
+### Pré-processamento do Segundo Dataset (512x512-RGB)
 
 Ao fim dos primeiros testes, o dataset com as images originais foi processados novamente, com o mesmo pipeline de dados, porém com novas dimensões e uma nova escala de cores, afim de permitir uma variabilidade maior nos testes, com o objetivo de melhorar as métricas do modelo.
 
-- O dataset final esta armazenado no Google Drive devido ao seu tamanho.
+- O segundo dataset esta armazenado no Google Drive devido ao seu tamanho.
 - Esse dataset possui imagens RGB com dimensões 512x512
 
 ## Os Modelos de Rede Neural
