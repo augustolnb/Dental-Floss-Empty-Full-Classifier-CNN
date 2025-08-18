@@ -137,6 +137,8 @@ Hiperparâmetros:
 - **Neurônios na Camada Densa:** 192
 - **Tamanho do Lote (Batch Size):** 32
 
+**Estrutura:**
+
 ```python
 final_model = keras.Sequential([
     layers.Input(shape=(128, 128, 3)),
@@ -159,12 +161,14 @@ final_model = keras.Sequential([
 
 ### Modelo Alimentado por Imagens em Escala de Cinza
 
-Hiperparâmetros:
+**Hiperparâmetros:**
 
 - **Taxa de Aprendizagem (Learning Rate):** 7e-05
 - **Taxa de Dropout:** 0.3
 - **Neurônios na Camada Densa:** 112
 - **Tamanho do Lote (Batch Size):** 32
+
+**Estrutura:**
 
 ```python
 final_model = keras.Sequential([
