@@ -288,12 +288,14 @@ Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab
 </p>
 
 <br>
+
 ### Modelo Cinza
 <p align='center'>
   <img width="829" height="822" alt="image" src="https://github.com/user-attachments/assets/f395c3c6-e116-43e0-9d5c-5c412f1ae181" />
 </p>
 
 <br>
+
 ### Resultados Obtidos
 <p align='center'>
   <img width="583" height="707" alt="image" src="https://github.com/user-attachments/assets/351507b3-f1fa-4fd8-89ca-99c92c3ba06f" />
