@@ -3,6 +3,8 @@
 ## Observação Importante!!
 Devido ao tamanho dos arquivos, tanto o dataset final - **dataset-dental-floss.zip (512x512-RGB)** -  como o **notebook python (.ipynb)** estão hospedados no Google Drive e podem ser acessados através do link: https://drive.google.com/drive/folders/1IrVB9KGnZcH3Ao1z7g0gTmWubeltKvBD?usp=sharing
 
+- Link do Google Colab: https://colab.research.google.com/drive/1an1rjwB7SHXk8EpmEBRZcKDs1pc8RlzY?usp=sharing
+
 ## Descrição do Projeto
 
 Este projeto apresenta uma solução de Visão Computacional proposta como trabalho final do **bootcamp de machine learning** do grupo de pesquisa LAMIA.
