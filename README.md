@@ -214,7 +214,7 @@ O modelo obteve valor de AUC = 0.9782 e a respectiva curva ROC é apresentada a 
 #### Gráficos de acurácia e perda durante o treino e a validação:
 
 <p align="center">
-  <img width="784" height="345" alt="image" src="https://github.com/user-attachments/assets/ee564ca9-51dd-47e4-849b-d2bb721a9705" />
+  <img width="784" height="365" alt="image" src="https://github.com/user-attachments/assets/ee564ca9-51dd-47e4-849b-d2bb721a9705" />
 </p>
 
 #### Matriz de confusão.
