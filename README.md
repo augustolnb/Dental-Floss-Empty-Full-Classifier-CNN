@@ -194,7 +194,7 @@ final_model = keras.Sequential([
 
 ## Resultados
 
-O dataset final foi utilizado para refinar o modelo, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. Um dos modelos é alimentado com imagens de dimensões 128x128 em RGB, enquanto o outro utiliza imagens de mesmas dimensões mas em escala de cinza.
+O segundo dataset foi utilizado para refinar o modelo inicialmente proposto que recebia imagens em escala de cinza, aumentando a possibilidade de diferentes combinações de parâmetros no processamento dos dados de entrada, juntamente com diferentes configurações de **data augmentation**. O segundo modelo é alimentado com imagens de dimensões 128x128 em RGB e não apresenta grande discrepância nos resultados quando comparado ao primeiro modelo durante as avaliações com os conjuntos de teste.
 
 Para ambos os modelos, apesar das variações testadas, foram utilizadas as seguintes configurações de **data augmentation**:
 
@@ -313,6 +313,7 @@ Além da possibilidade de utilizar o modelo diretamente a partir do Google Colab
   <img width="583" height="707" alt="image" src="https://github.com/user-attachments/assets/351507b3-f1fa-4fd8-89ca-99c92c3ba06f" />
 </p>
 
+Apesar dos resultados similares obtidos durante os testes inicias, quando submetidos a imagens reais o modelo que recebe imagens RGB parece ser confundido mais facilmente, principalmente quando as embalagens estão rotuladas como cheias. Esse resultado endossa a ideia presente na literatura que reduzir dimensões de cores ajuda a tornar a identificação de imagens por redes neurais mais robusta.
 
 ## ✒️ Autor
 
