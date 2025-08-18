@@ -7,11 +7,11 @@ Devido ao tamanho dos arquivos, tanto o dataset final - **dataset-dental-floss.z
 
 Este projeto apresenta uma solução de Visão Computacional proposta como trabalho final do **bootcamp de machine learning** do grupo de pesquisa LAMIA.
 
-O modelo implementado realiza a classificação binária de embalagens de fio dental, determinando se elas estão **cheias** ou **vazias**. 
+Os modelos implementados realizam a classificação binária de embalagens de fio dental, determinando se elas estão **cheias** ou **vazias**. 
 
 Uma aplicação plausível seria automatizar o processo de verificação do produto em uma linha de produção ou estoque, utilizando uma Rede Neural Convolucional (CNN) treinada para a tarefa.
 
-O sistema foi desenvolvido em Python, utilizando a biblioteca TensorFlow/Keras para a construção e treinamento do modelo, no ambiente online do Google Colab.
+Os sistemas foram desenvolvidos em Python, utilizando a biblioteca TensorFlow/Keras para a construção e treinamento do modelo, no ambiente online do Google Colab.
 
 <img width="1133" height="356" alt="image" src="https://github.com/user-attachments/assets/bc6c04d2-bd38-4818-89cd-728a5f648938" />
 
@@ -116,8 +116,6 @@ Ao fim dos primeiros testes, o dataset com as images originais foi processados n
 - Para a definição da estrutura e dos hiperparâmetros foram aplicadas as técnicas de **Otimização Bayesiana** e **Grid Search**.
 
 ### Arquiteturas
-
-Os modelos foram construídos com a biblioteca TensorFlow/Keras, as estruturas são apresentadas abaixo.
 
 #### Modelo Alimentado por Imagens RGB
 
