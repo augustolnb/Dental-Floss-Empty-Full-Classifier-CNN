@@ -273,12 +273,18 @@ Basta passar como argumento do código o caminho para o modelo salvo e para a pa
 $ python3.12 predict-offline.py --caminho_modelo /caminho/do/modelo/salvo/model14_final.h5 --pasta_imagens /caminho/das/imagens
 
 ```
-<br><br>
-### Exemplo de predição com imagens inéditas:
-#### Via Google Colab
+<br>
 
+## Predições com imagens inéditas:
+
+### Modelo RGB
 <p align='center'>
-<img width="737" height="860" alt="image" src="https://github.com/user-attachments/assets/fd535fae-73e8-4002-8a7a-16b2e87da51f" />
+  <img width="828" height="817" alt="image" src="https://github.com/user-attachments/assets/522a0ead-9271-4f7c-8033-600ac69a94c7" />
+</p>
+
+### Modelo Cinza
+<p align='center'>
+  <img width="829" height="822" alt="image" src="https://github.com/user-attachments/assets/f395c3c6-e116-43e0-9d5c-5c412f1ae181" />
 </p>
 
 
