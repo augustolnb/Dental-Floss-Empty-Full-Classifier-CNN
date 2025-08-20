@@ -35,7 +35,7 @@ Os sistemas foram desenvolvidos em Python, utilizando a biblioteca TensorFlow/Ke
 │   ├── 01-organizar_DS.py
 │   ├── 02-selecionar_ROI.py
 │   └── 03-ajustar_DS.py
-├── Relatorio28-LucasAugusto-V4.pdf       
+├── Relatorio28-LucasAugusto-V5.pdf       
 ├── card28_V4.xlsx                           # Arquivo com dados de testes
 ├── modelo_cinza-final.h5                    # Modelo cinza salvo
 ├── modelo_rgb-final.h5                      # Modelo rgb salvo  
